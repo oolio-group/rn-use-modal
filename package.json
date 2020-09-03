@@ -12,7 +12,7 @@
   "main": "lib/index",
   "types": "lib",
   "files": [
-    "dist",
+    "lib",
     "LICENSE",
     "README.md"
   ],
