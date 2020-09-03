@@ -2,6 +2,8 @@
 
 React hook for showing modals on react-native. Uses `react-native-modal` under the hood. Show any component as modal with `showModal`
 
+[![codecov](https://codecov.io/gh/hitz-group/rn-use-modal/branch/master/graph/badge.svg?token=PINPV73BX8)](https://codecov.io/gh/hitz-group/rn-use-modal) [![npm](https://img.shields.io/npm/v/@hitz-group/rn-use-modal/latest.svg)](https://www.npmjs.com/package/@hitz-group/rn-use-modal) ![Build](https://github.com/hitz-group/rn-use-modal/workflows/Unit%20Tests%20and%20ESLint/badge.svg)
+
 ## Why
 
 - Following recent trends `useModal` fits right in
@@ -17,13 +19,13 @@ function ScreenWithModal() {
 
   const onConfirm = useCallback(() => {
     closeModal();
-  }, [closeModal])
+  }, [closeModal]);
 
   const showConfirmation = useCallback(() => {
     showModal(<ConfirmationModal onConfirm={onConfirm} />);
   }, [showModal]);
 
-  return (<Pressable onPress={showConfirmation}>Confirm Me</Pressable>)
+  return <Pressable onPress={showConfirmation}>Confirm Me</Pressable>;
 }
 ```
 
