@@ -1,0 +1,76 @@
+{
+  "name": "@hitz-group/rn-use-modal",
+  "description": "React hook for showing modals on react-native. Using useModal you can show any component as modal",
+  "keywords": [
+    "react",
+    "react-native",
+    "hooks",
+    "modal",
+    "useModal"
+  ],
+  "version": "0.1.0",
+  "main": "lib/index",
+  "types": "lib",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/hitz-group/rn-use-modal.git"
+  },
+  "bugs": "https://github.com/hitz-group/rn-use-modal/issues",
+  "license": "MIT",
+  "contributors": [
+    "Shidil Eringa <shidil@live.com>"
+  ],
+  "author": {
+    "email": "shidil@live.com",
+    "name": "Shidil Eringa"
+  },
+  "scripts": {
+    "build": "yarn  clean && yarn  compile",
+    "build:watch": "yarn compile -- -w",
+    "clean": "rm -rf ./lib && rm -rf tsconfig.tsbuildinfo",
+    "compile": "tsc -p ./tsconfig.json",
+    "test": "jest",
+    "lint": "eslint . --ext .ts,.js,.tsx --max-warnings=0",
+    "lint:report": "eslint . --output-file ./eslint_report.json --format json  --ext .ts,.js,.tsx | true"
+  },
+  "dependencies": {
+    "react-native-modal": "11.5.6"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.3",
+    "react-native": ">=0.59.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "7.10.4",
+    "@types/jest": "26.0.13",
+    "@types/react": "16.9.46",
+    "@types/react-native": "0.63.13",
+    "@types/react-test-renderer": "16.9.3",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.1",
+    "eslint": "7.8.1",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "husky": "4.2.5",
+    "jest": "26.4.2",
+    "prettier": "2.1.1",
+    "pretty-quick": "3.0.0",
+    "react": "16.13.1",
+    "react-native": "0.63.2",
+    "react-test-renderer": "16.13.1",
+    "typescript": "4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && pretty-quick --staged"
+    }
+  }
+}
