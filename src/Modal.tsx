@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react';
+import React, { createContext, useCallback, useMemo, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import ModalComponent, { ModalProps } from 'react-native-modal';
 
@@ -78,4 +72,3 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
     </ModalContext.Provider>
   );
 };
-
