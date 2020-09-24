@@ -57,7 +57,7 @@
     "@typescript-eslint/parser": "4.1.1",
     "eslint": "7.9.0",
     "eslint-config-prettier": "6.11.0",
-    "eslint-plugin-react": "7.20.6",
+    "eslint-plugin-react": "7.21.2",
     "eslint-plugin-react-hooks": "4.1.0",
     "husky": "4.3.0",
     "jest": "26.4.2",
