@@ -1,6 +1,5 @@
 import React, { createContext, useCallback, useMemo, useState } from 'react';
-import { StyleSheet } from 'react-native';
-import ModalComponent, { ModalProps } from 'react-native-modal';
+import { Modal as ModalComponent, ModalProps, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   modalStyle: {
@@ -60,9 +59,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
       <ModalComponent
         {...modalProps}
         {...(modal?.options || {})}
-        isVisible={modal !== null}
-        useNativeDriver
-        hideModalContentWhileAnimating
+        visible={modal !== null}
         hardwareAccelerated={true}
         presentationStyle="overFullScreen"
         style={styles.modalStyle}
