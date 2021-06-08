@@ -4,10 +4,7 @@ import ModalComponent, { ModalProps } from 'react-native-modal';
 
 const styles = StyleSheet.create({
   modalStyle: {
-    width: '100%',
-    height: '100%',
-    marginLeft: 0,
-    margin: 0,
+    flex: 1,
   },
 });
 
