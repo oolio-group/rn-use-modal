@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { create, act } from 'react-test-renderer';
 import { ModalContext, ModalProvider } from '../src/Modal';
+import { waitForPaint } from './testhelper';
 
 jest.useFakeTimers();
 
@@ -55,6 +56,72 @@ describe('Modal Provider', () => {
     });
 
     expect(wrapper.root.findByType(Text).props.children).toBe('Hello World');
+  });
+
+  test('showModal with options', async () => {
+    const onModalHideMock = jest.fn();
+    const TestConsumer: React.FC = () => {
+      const { showModal, closeModal } = useContext(ModalContext);
+      const onShowModal = () => {
+        showModal(<Text testID="modal-content">Hello World</Text>, {
+          onModalHide: onModalHideMock,
+        });
+      };
+
+      const onCloseModal = () => {
+        closeModal();
+      };
+      return (
+        <View>
+          <TouchableOpacity testID="show-modal" onPress={onShowModal}>
+            <Text>Show Modal</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity testID="close-modal" onPress={onCloseModal}>
+            <Text>Close Modal</Text>
+          </TouchableOpacity>
+        </View>
+      );
+    };
+
+    const wrapper = create(
+      <ModalProvider>
+        <TestConsumer />
+      </ModalProvider>,
+    );
+    await waitForPaint();
+
+    const { onPress: onShowModal } = wrapper.root.findByProps({
+      testID: 'show-modal',
+    })?.props;
+    act(() => {
+      onShowModal();
+    });
+
+    await waitForPaint();
+
+    expect(
+      wrapper.root.findAllByProps({
+        testID: 'modal-content',
+      }),
+    ).toHaveLength(2);
+
+    const { onPress: onCloseModal } = wrapper.root.findByProps({
+      testID: 'close-modal',
+    })?.props;
+    act(() => {
+      onCloseModal();
+    });
+
+    await waitForPaint();
+
+    expect(
+      wrapper.root.findAllByProps({
+        testID: 'modal-content',
+      }),
+    ).toHaveLength(0);
+
+    expect(onModalHideMock).toHaveBeenCalled();
   });
 
   test('closeModal', () => {
