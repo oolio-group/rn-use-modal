@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useMemo, useState } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { StyleSheet } from 'react-native';
 import ModalComponent, { ModalProps } from 'react-native-modal';
 
@@ -7,11 +13,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-export interface Modal {
-  content: React.ReactNode;
-  options?: Partial<ModalProps>;
-}
 
 export interface ModalProviderProps {
   children: React.ReactNode;
@@ -31,19 +32,19 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
   children,
   modalProps,
 }: ModalProviderProps) => {
-  const [modal, setModal] = useState<Modal | null>(null);
+  const [content, setContent] = useState<React.ReactNode | null>(null);
+  const optionsRef = useRef<Partial<ModalProps>>({});
+
   const showModal = useCallback(
     (content: React.ReactNode, options?: Partial<ModalProps>) => {
-      setModal({
-        content,
-        options,
-      });
+      setContent(content);
+      optionsRef.current = options;
     },
     [],
   );
 
   const closeModal = useCallback(() => {
-    setModal(null);
+    setContent(null);
   }, []);
 
   const value = useMemo(() => ({ showModal, closeModal }), [
@@ -56,15 +57,15 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
       {children}
       <ModalComponent
         {...modalProps}
-        {...(modal?.options || {})}
-        isVisible={modal !== null}
+        {...(optionsRef.current || {})}
+        isVisible={content !== null}
         useNativeDriver
         hideModalContentWhileAnimating
         hardwareAccelerated={true}
         presentationStyle="overFullScreen"
         style={styles.modalStyle}
       >
-        {modal?.content}
+        {content}
       </ModalComponent>
     </ModalContext.Provider>
   );
