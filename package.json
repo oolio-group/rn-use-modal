@@ -39,7 +39,7 @@
     "lint:report": "eslint . --output-file ./eslint_report.json --format json  --ext .ts,.js,.tsx | true"
   },
   "dependencies": {
-    "react-native-modal": "11.5.6"
+    "react-native-modal": "11.10.0"
   },
   "peerDependencies": {
     "react": ">=16.8.3",
