@@ -1,5 +1,5 @@
 {
-  "name": "@hitz-group/rn-use-modal",
+  "name": "@oolio-group/rn-use-modal",
   "description": "React hook for showing modals on react-native. Using useModal you can show any component as modal",
   "keywords": [
     "react",
@@ -8,7 +8,7 @@
     "modal",
     "useModal"
   ],
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "lib/index",
   "types": "lib",
   "files": [
@@ -18,9 +18,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/hitz-group/rn-use-modal.git"
+    "url": "http://github.com/oolio-group/rn-use-modal.git"
   },
-  "bugs": "https://github.com/hitz-group/rn-use-modal/issues",
+  "bugs": "https://github.com/oolio-group/rn-use-modal/issues",
   "license": "MIT",
   "contributors": [
     "Shidil Eringa <shidil@live.com>"
