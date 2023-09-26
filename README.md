@@ -1,8 +1,8 @@
-# @hitz-group/rn-use-modal
+# @oolio-group/rn-use-modal
 
 React hook for showing modals on react-native. Uses `react-native-modal` under the hood. Show any component as modal with `showModal`
 
-[![codecov](https://codecov.io/gh/hitz-group/rn-use-modal/branch/master/graph/badge.svg?token=PINPV73BX8)](https://codecov.io/gh/hitz-group/rn-use-modal) [![npm](https://img.shields.io/npm/v/@hitz-group/rn-use-modal/latest.svg)](https://www.npmjs.com/package/@hitz-group/rn-use-modal) ![Build](https://github.com/hitz-group/rn-use-modal/workflows/Unit%20Tests%20and%20ESLint/badge.svg)
+[![codecov](https://codecov.io/gh/oolio-group/rn-use-modal/branch/master/graph/badge.svg?token=PINPV73BX8)](https://codecov.io/gh/oolio-group/rn-use-modal) [![npm](https://img.shields.io/npm/v/@oolio-group/rn-use-modal/latest.svg)](https://www.npmjs.com/package/@oolio-group/rn-use-modal) ![Build](https://github.com/oolio-group/rn-use-modal/workflows/Unit%20Tests%20and%20ESLint/badge.svg)
 
 ## Why
 
@@ -12,7 +12,7 @@ React hook for showing modals on react-native. Uses `react-native-modal` under t
 ## Usage
 
 ```js
-import { useModal } from '@hitz-group/rn-use-modal';
+import { useModal } from '@oolio-group/rn-use-modal';
 
 function ScreenWithModal() {
   const { showModal, closeModal } = useModal();
