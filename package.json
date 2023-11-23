@@ -9,13 +9,8 @@
     "useModal"
   ],
   "version": "0.1.9",
-  "main": "lib/index",
-  "types": "lib",
-  "files": [
-    "lib",
-    "LICENSE",
-    "README.md"
-  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "http://github.com/oolio-group/rn-use-modal.git"
@@ -30,7 +25,7 @@
     "name": "Shidil Eringa"
   },
   "scripts": {
-    "build": "yarn  clean && yarn  compile",
+    "build": "yarn  clean && tsc",
     "build:watch": "yarn compile -- -w",
     "clean": "rm -rf ./lib && rm -rf tsconfig.tsbuildinfo",
     "compile": "tsc -p ./tsconfig.json",
@@ -66,7 +61,7 @@
     "react": "18.0.0",
     "react-native": "0.69.0",
     "react-test-renderer": "16.14.0",
-    "typescript": "4.0.5"
+    "typescript": "4.9.4"
   },
   "husky": {
     "hooks": {

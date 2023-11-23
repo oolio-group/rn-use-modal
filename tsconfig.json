@@ -3,11 +3,10 @@
     "jsx": "react",
     "declaration": true,
     "esModuleInterop": true,
-    "outDir": "./lib",
+    "outDir": "./dist",
     "rootDir": "./src",
     "skipLibCheck": true
   },
-
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "lib"]
+  "exclude": ["node_modules", "dist"]
 }
