@@ -1,5 +1,5 @@
 **/node_modules
-**/dist
+**/lib
 eslint_report.json
 .nyc_output
 coverage

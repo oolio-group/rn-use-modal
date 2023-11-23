@@ -3,7 +3,7 @@ module.exports = {
   displayName: 'rn-use-modal',
   collectCoverage: true,
   collectCoverageFrom: ['**/*.{ts,tsx}'],
-  modulePathIgnorePatterns: ['dist'],
+  modulePathIgnorePatterns: ['lib'],
   coveragePathIgnorePatterns: ['node_modules', 'src/index.ts'],
   transform: {
     '^.+\\.js$': require.resolve('react-native/jest/preprocessor.js'),
