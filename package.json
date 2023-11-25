@@ -9,10 +9,9 @@
     "useModal"
   ],
   "version": "0.1.9",
-  "main": "lib/index",
-  "types": "lib",
+  "main": "src/index",
   "files": [
-    "lib",
+    "src",
     "LICENSE",
     "README.md"
   ],
@@ -36,24 +35,24 @@
     "compile": "tsc -p ./tsconfig.json",
     "test": "jest",
     "lint": "eslint . --ext .ts,.js,.tsx --max-warnings=0",
-    "lint:report": "eslint . --output-file ./eslint_report.json --format json  --ext .ts,.js,.tsx | true",
-    "prepublishOnly": "tsc -p ./tsconfig.json"
+    "lint:report": "eslint . --output-file ./eslint_report.json --format json  --ext .ts,.js,.tsx | true"
   },
   "dependencies": {
-    "react-native-modal": "11.5.6"
+    "react-native-modal": "13.0.1"
   },
   "peerDependencies": {
-    "react": ">=16.8.3",
-    "react-native": ">=0.59.0"
+    "react": "*",
+    "react-native": ">=0.65.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.12.1",
-    "@babel/preset-react": "7.12.1",
-    "@babel/preset-typescript": "7.12.1",
+    "@babel/preset-env": "7.20.2",
+    "@babel/preset-react": "7.22.5",
+    "@babel/preset-typescript": "7.21.0",
+    "@tsconfig/react-native": "^3.0.0",
     "@types/jest": "26.0.15",
-    "@types/react": "16.9.50",
-    "@types/react-native": "0.63.30",
-    "@types/react-test-renderer": "16.9.3",
+    "@types/react": "18.2.38",
+    "@types/react-native": "0.72.7",
+    "@types/react-test-renderer": "18.0.7",
     "@typescript-eslint/eslint-plugin": "4.6.0",
     "@typescript-eslint/parser": "4.6.0",
     "eslint": "7.12.1",
@@ -64,10 +63,10 @@
     "jest": "26.6.1",
     "prettier": "2.1.2",
     "pretty-quick": "3.1.0",
-    "react": "16.14.0",
-    "react-native": "0.63.3",
-    "react-test-renderer": "16.14.0",
-    "typescript": "4.0.5"
+    "react": "18.0.0",
+    "react-native": "0.71.0",
+    "react-test-renderer": "18.2.0",
+    "typescript": "4.9.4"
   },
   "husky": {
     "hooks": {

@@ -38,7 +38,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
   const showModal = useCallback(
     (content: React.ReactNode, options?: Partial<ModalProps>) => {
       setContent(content);
-      optionsRef.current = options;
+      if (options) optionsRef.current = options;
     },
     [],
   );
