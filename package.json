@@ -9,9 +9,9 @@
     "useModal"
   ],
   "version": "0.1.9",
-  "main": "src/index",
+  "main": "lib/index",
   "files": [
-    "src",
+    "lib",
     "LICENSE",
     "README.md"
   ],
