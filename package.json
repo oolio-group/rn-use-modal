@@ -10,6 +10,7 @@
   ],
   "version": "0.1.9",
   "main": "lib/index",
+  "types": "lib",
   "files": [
     "lib",
     "LICENSE",
