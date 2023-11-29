@@ -8,7 +8,7 @@
     "modal",
     "useModal"
   ],
-  "version": "0.1.9",
+  "version": "0.2.0",
   "main": "lib/index",
   "types": "lib",
   "files": [
@@ -39,34 +39,47 @@
     "lint:report": "eslint . --output-file ./eslint_report.json --format json  --ext .ts,.js,.tsx | true"
   },
   "dependencies": {
-    "react-native-modal": "11.5.6"
+    "react-native-modal": "13.0.1"
   },
   "peerDependencies": {
-    "react": ">=16.8.3",
-    "react-native": ">=0.59.0"
+    "react": "*",
+    "react-native": ">=0.65.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.12.1",
-    "@babel/preset-react": "7.12.1",
-    "@babel/preset-typescript": "7.12.1",
+    "@babel/core": "7.13.15",
+    "@babel/helper-string-parser": "7.18.10",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/plugin-proposal-export-default": "7.0.0-beta.32",
+    "@babel/plugin-proposal-export-default-from": "7.12.13",
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@babel/plugin-syntax-jsx": "7.12.13",
+    "@babel/plugin-transform-flow-strip-types": "7.16.7",
+    "@babel/plugin-transform-object-assign": "7.12.13",
+    "@babel/plugin-transform-react-jsx-self": "7.16.7",
+    "@babel/plugin-transform-react-jsx-source": "7.16.7",
+    "@babel/preset-env": "7.13.15",
+    "@babel/preset-react": "7.13.13",
+    "@babel/preset-typescript": "7.13.0",
+    "@babel/runtime": "7.13.10",
     "@types/jest": "26.0.15",
-    "@types/react": "16.9.50",
-    "@types/react-native": "0.63.30",
-    "@types/react-test-renderer": "16.9.3",
+    "@types/react": "18.2.38",
+    "@types/react-native": "0.72.7",
+    "@types/react-test-renderer": "18.0.7",
     "@typescript-eslint/eslint-plugin": "4.6.0",
     "@typescript-eslint/parser": "4.6.0",
+    "babel-jest": "26.6.3",
     "eslint": "7.12.1",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "4.3.0",
-    "jest": "26.6.1",
+    "jest": "26.6.3",
     "prettier": "2.1.2",
     "pretty-quick": "3.1.0",
-    "react": "16.14.0",
-    "react-native": "0.63.3",
-    "react-test-renderer": "16.14.0",
-    "typescript": "4.0.5"
+    "react": "17.0.2",
+    "react-native": "0.66.5",
+    "react-test-renderer": "17.0.2",
+    "typescript": "4.9.4"
   },
   "husky": {
     "hooks": {

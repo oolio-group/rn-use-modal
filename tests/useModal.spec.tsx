@@ -9,7 +9,7 @@ describe('useModal', () => {
     const TestConsumer: React.FC = () => {
       const value = useModal();
       spy(value);
-      return null;
+      return <></>;
     };
 
     create(
