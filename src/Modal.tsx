@@ -38,7 +38,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
   const showModal = useCallback(
     (content: React.ReactNode, options?: Partial<ModalProps>) => {
       setContent(content);
-      if (options) optionsRef.current = options;
+      optionsRef.current = options;
     },
     [],
   );
@@ -47,10 +47,10 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
     setContent(null);
   }, []);
 
-  const value = useMemo(() => ({ showModal, closeModal }), [
-    showModal,
-    closeModal,
-  ]);
+  const value = useMemo(
+    () => ({ showModal, closeModal }),
+    [showModal, closeModal],
+  );
 
   return (
     <ModalContext.Provider value={value}>
