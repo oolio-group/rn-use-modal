@@ -48,10 +48,10 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
     setContent(null);
   }, []);
 
-  const value = useMemo(
-    () => ({ showModal, closeModal }),
-    [showModal, closeModal],
-  );
+  const value = useMemo(() => ({ showModal, closeModal }), [
+    showModal,
+    closeModal,
+  ]);
 
   return (
     <ModalContext.Provider value={value}>
@@ -64,7 +64,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
         hideModalContentWhileAnimating
         hardwareAccelerated={true}
         presentationStyle="overFullScreen"
-        style={[styles.modalStyle, modalProps.style]}
+        style={[styles.modalStyle, modalProps?.style]}
       >
         {content}
       </ModalComponent>
