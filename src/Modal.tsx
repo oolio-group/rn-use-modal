@@ -11,6 +11,7 @@ import ModalComponent, { ModalProps } from 'react-native-modal';
 const styles = StyleSheet.create({
   modalStyle: {
     flex: 1,
+    margin: 0,
   },
 });
 
@@ -63,7 +64,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
         hideModalContentWhileAnimating
         hardwareAccelerated={true}
         presentationStyle="overFullScreen"
-        style={styles.modalStyle}
+        style={[styles.modalStyle, modalProps.style]}
       >
         {content}
       </ModalComponent>
