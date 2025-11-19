@@ -23,6 +23,7 @@ export interface ModalProviderProps {
 export interface ModalContextValue {
   showModal: (content: React.ReactNode, options?: Partial<ModalProps>) => void;
   closeModal: () => void;
+  isVisible: boolean;
 }
 
 export const ModalContext = createContext<ModalContextValue>(
@@ -48,10 +49,16 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
     setContent(null);
   }, []);
 
-  const value = useMemo(() => ({ showModal, closeModal }), [
-    showModal,
-    closeModal,
-  ]);
+  const isVisible = content !== null;
+
+  const value = useMemo(
+    () => ({
+      showModal,
+      closeModal,
+      isVisible,
+    }),
+    [showModal, closeModal, isVisible],
+  );
 
   return (
     <ModalContext.Provider value={value}>
@@ -59,10 +66,10 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
       <ModalComponent
         {...modalProps}
         {...(optionsRef.current || {})}
-        isVisible={content !== null}
+        isVisible={isVisible}
         useNativeDriver
         hideModalContentWhileAnimating
-        hardwareAccelerated={true}
+        hardwareAccelerated
         presentationStyle="overFullScreen"
         style={[styles.modalStyle, modalProps?.style]}
       >

@@ -8,7 +8,7 @@
     "modal",
     "useModal"
   ],
-  "version": "0.3.0-beta",
+  "version": "0.3.1-beta",
   "main": "lib/index",
   "types": "lib",
   "files": [
