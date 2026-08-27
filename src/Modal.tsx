@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 import { StyleSheet } from 'react-native';
-import ModalComponent, { ModalProps } from 'react-native-modal';
+import ModalComponent, { ModalProps as RNModalProps } from 'react-native-modal';
 
 const styles = StyleSheet.create({
   modalStyle: {
@@ -14,6 +14,12 @@ const styles = StyleSheet.create({
     margin: 0,
   },
 });
+
+// react-native-modal forwards unrecognized props straight through to RN's
+// native Modal, but its own types don't declare navigationBarTranslucent yet.
+export type ModalProps = RNModalProps & {
+  navigationBarTranslucent?: boolean;
+};
 
 export interface ModalProviderProps {
   children: React.ReactNode;
